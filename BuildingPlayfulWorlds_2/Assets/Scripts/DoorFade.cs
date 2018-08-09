@@ -23,9 +23,12 @@ public class DoorFade : MonoBehaviour
 
             for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / time)
             {
-                Color newColor = new Color(1, 1, 1, Mathf.Lerp(alpha, value, t));
-                door.GetComponentInChildren<SpriteRenderer>().material.color = newColor;
-                yield return null;
+                if (door != null)
+                {
+                    Color newColor = new Color(1, 1, 1, Mathf.Lerp(alpha, value, t));
+                    door.GetComponentInChildren<SpriteRenderer>().material.color = newColor;
+                    yield return null;
+                }
             }
             Destroy(door);
         } 

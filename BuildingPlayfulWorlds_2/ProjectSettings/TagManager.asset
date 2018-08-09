@@ -9,6 +9,7 @@ TagManager:
   - right
   - non_obstacle
   - groundcheck
+  - lightcheck
   layers:
   - Default
   - TransparentFX

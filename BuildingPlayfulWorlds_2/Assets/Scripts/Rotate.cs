@@ -18,7 +18,7 @@ public class Rotate : MonoBehaviour
         //the player is located. Because if a circle rotates the outer layers of the circle will make more distance than the inner layers of the circle because they have a bigger surface 
         //that needs to move in a certain amount of time
         speedTrue =  speed/(player.transform.position.y);
-
+        speedTrue = Mathf.Clamp(speedTrue, -1.6f, 0.0f);
         if (Input.GetKey("d") && collisionR == false)
         {
             transform.Rotate(Vector3.back * -speedTrue);

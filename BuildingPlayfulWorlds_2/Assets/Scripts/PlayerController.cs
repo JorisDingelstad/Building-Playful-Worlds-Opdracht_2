@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float jumpForce = 5.0f;
+    public float jumpForce = 550.0f;
     public static bool onTheGround;
-    public bool debugGrounded;
     Rigidbody2D _rigidbody;
+    public float posY;
 
-	
-	void Start ()
+
+
+    void Start ()
     {
         
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
@@ -20,11 +21,16 @@ public class PlayerController : MonoBehaviour
 	
 	void Update ()
     {
-        debugGrounded = onTheGround;
+        posY = this.gameObject.transform.position.y;
         if (Input.GetButtonDown("Jump") && onTheGround)
         {
             _rigidbody.AddForce(Vector2.up * jumpForce);
         }
-        
+
+        if (Input.GetKeyDown("p"))
+        {
+            posY += 1;
+        }
+
 	}
 }

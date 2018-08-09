@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4555349631133008}
   - component: {fileID: 212274986844812024}
   - component: {fileID: 61041452076681782}
-  - component: {fileID: 114238215699366066}
+  - component: {fileID: 114834759021695542}
   m_Layer: 0
   m_Name: Switch0
   m_TagString: non_obstacle
@@ -35,9 +35,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1100503464746492}
-  m_LocalRotation: {x: -0, y: -0, z: -0.9898011, w: 0.14245628}
-  m_LocalPosition: {x: -0.38459, y: 2.3111, z: 0}
-  m_LocalScale: {x: 0.3894364, y: 0.09953828, z: 1.0941141}
+  m_LocalRotation: {x: -0, y: -0, z: -0.0016469657, w: -0.9999987}
+  m_LocalPosition: {x: -0.29227757, y: -5.3809934, z: 0}
+  m_LocalScale: {x: 0.38943684, y: 0.09953838, z: 1.0941141}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2326965, y: 1.2320957}
   m_EdgeRadius: 0
---- !u!114 &114238215699366066
+--- !u!114 &114834759021695542
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -75,13 +75,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1100503464746492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd65decd307d7e24894eeb58f6a9b4a7, type: 3}
+  m_Script: {fileID: 11500000, guid: c7e632c74500cad4d821854c972987d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 0}
-  destination: {fileID: 0}
-  originalPosition: {fileID: 0}
-  switchHit: 0
 --- !u!212 &212274986844812024
 SpriteRenderer:
   m_ObjectHideFlags: 1
