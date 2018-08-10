@@ -9,7 +9,6 @@ public class Rotate : MonoBehaviour
     public static bool collisionL = false;
     public static bool collisionR = false;
     public GameObject player;
-    
 
 
 	void Update ()
@@ -19,12 +18,12 @@ public class Rotate : MonoBehaviour
         //that needs to move in a certain amount of time
         speedTrue =  speed/(player.transform.position.y);
         speedTrue = Mathf.Clamp(speedTrue, -1.6f, 0.0f);
-        if (Input.GetKey("d") && collisionR == false)
+        if (Input.GetKey("d") && collisionR == false && PauseMenu.paused == false)
         {
             transform.Rotate(Vector3.back * -speedTrue);
         }
 
-        if (Input.GetKey("a") && collisionL == false)
+        if (Input.GetKey("a") && collisionL == false && PauseMenu.paused == false)
         {
             transform.Rotate(Vector3.forward * -speedTrue);
         }

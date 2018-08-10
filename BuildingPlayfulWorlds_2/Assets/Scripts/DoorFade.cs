@@ -5,6 +5,8 @@ using UnityEngine;
 public class DoorFade : MonoBehaviour
 {
     public GameObject door;
+    public ParticleSystem doorPartSys;
+    public ParticleSystem switchPartSys;
     
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -12,6 +14,8 @@ public class DoorFade : MonoBehaviour
         if (collision.gameObject.tag == "groundcheck")
         {
             StartCoroutine(FadeAway(0.0f, 1.0f));
+            doorPartSys.Stop();
+            switchPartSys.Stop();
         }
     }
 
