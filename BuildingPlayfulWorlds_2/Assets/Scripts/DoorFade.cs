@@ -7,7 +7,16 @@ public class DoorFade : MonoBehaviour
     public GameObject door;
     public ParticleSystem doorPartSys;
     public ParticleSystem switchPartSys;
-    
+    AudioSource audio;
+
+    bool triggerHit;
+
+    private void Start()
+    {
+        audio = this.gameObject.GetComponent<AudioSource>();
+        triggerHit = false;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,6 +25,11 @@ public class DoorFade : MonoBehaviour
             StartCoroutine(FadeAway(0.0f, 1.0f));
             doorPartSys.Stop();
             switchPartSys.Stop();
+            if (!triggerHit)
+            {
+                audio.Play();
+                triggerHit = true;
+            }
         }
     }
 
