@@ -8,6 +8,8 @@ public class Rotate : MonoBehaviour
     public float speedTrue; //rotating speed of the map according to the player's position
     public static bool collisionL = false;
     public static bool collisionR = false;
+
+    bool facingLeft = false;
     public GameObject player;
 
 
@@ -21,12 +23,24 @@ public class Rotate : MonoBehaviour
         if (Input.GetKey("d") && collisionR == false && PauseMenu.paused == false)
         {
             transform.Rotate(Vector3.back * -speedTrue);
+            facingLeft = false;
         }
 
         if (Input.GetKey("a") && collisionL == false && PauseMenu.paused == false)
         {
             transform.Rotate(Vector3.forward * -speedTrue);
+            facingLeft = true;
         }
 		
+        if (facingLeft)
+        {
+            player.GetComponentInChildren<SpriteRenderer>().flipX = false;
+        }
+
+        else
+        {
+            player.GetComponentInChildren<SpriteRenderer>().flipX = true;
+        }
+
 	}
 }
